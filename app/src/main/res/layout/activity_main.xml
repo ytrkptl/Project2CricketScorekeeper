@@ -1,0 +1,551 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <RadioGroup
+            android:id="@+id/radio_group_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:padding="@dimen/margin"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/teamNameA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/no_margin"
+                    android:layout_marginLeft="@dimen/no_margin"
+                    android:layout_marginRight="@dimen/no_margin"
+                    android:layout_marginStart="@dimen/no_margin"
+                    android:layout_marginTop="@dimen/margin"
+                    android:paddingEnd="@dimen/margin"
+                    android:paddingLeft="@dimen/margin"
+                    android:paddingRight="@dimen/margin"
+                    android:paddingStart="@dimen/margin"
+                    android:text="@string/team_nameA"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/team_A_text_size"
+                    app:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/runsA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:paddingEnd="@dimen/no_margin"
+                    android:paddingLeft="@dimen/padding_left"
+                    android:paddingRight="@dimen/no_margin"
+                    android:paddingStart="@dimen/padding_left"
+                    android:text="@string/runs_A"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:text="@string/slash_sign"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/wicketsA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:paddingEnd="@dimen/padding_right"
+                    android:paddingLeft="@dimen/no_margin"
+                    android:paddingRight="@dimen/padding_right"
+                    android:paddingStart="@dimen/no_margin"
+                    android:text="@string/team_A_wickets_text_view"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/teamNameB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/no_margin"
+                    android:layout_marginLeft="@dimen/no_margin"
+                    android:layout_marginRight="@dimen/no_margin"
+                    android:layout_marginStart="@dimen/no_margin"
+                    android:layout_marginTop="@dimen/margin"
+                    android:paddingEnd="@dimen/margin"
+                    android:paddingLeft="@dimen/margin"
+                    android:paddingRight="@dimen/margin"
+                    android:paddingStart="@dimen/margin"
+                    android:text="@string/team_nameB"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/team_A_text_size"
+                    app:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/runsB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:paddingEnd="@dimen/no_margin"
+                    android:paddingLeft="@dimen/padding_left"
+                    android:paddingRight="@dimen/no_margin"
+                    android:paddingStart="@dimen/padding_left"
+                    android:text="@string/runs_B"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:text="@string/slash_sign"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/wicketsB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:background="@android:color/white"
+                    android:paddingEnd="@dimen/padding_right"
+                    android:paddingLeft="@dimen/no_margin"
+                    android:paddingRight="@dimen/padding_right"
+                    android:paddingStart="@dimen/no_margin"
+                    android:text="@string/team_B_wickets_text_view"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif" />
+
+        </RadioGroup>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
+                android:text="@string/which_team_batting_text_view"
+                android:textColor="@color/black"
+                android:textSize="@dimen/team_A_text_size"
+                app:fontFamily="sans-serif" />
+
+            <ToggleButton
+                android:id="@+id/toggle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="@string/team_nameB"
+                android:textOff="@string/team_nameA"
+                android:onClick="onToggleClicked"/>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/no_margin"
+                    android:paddingLeft="@dimen/margin"
+                    android:paddingRight="@dimen/no_margin"
+                    android:paddingStart="@dimen/margin">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/player_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginTop="@dimen/margin"
+                            android:text="@string/player_1_text_view"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/team_A_text_size"
+                            app:fontFamily="sans-serif" />
+
+                        <TextView
+                            android:id="@+id/playerOneRuns"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginTop="@dimen/margin"
+                            android:background="@android:color/white"
+                            android:paddingEnd="@dimen/padding_right"
+                            android:paddingLeft="@dimen/padding_left"
+                            android:paddingRight="@dimen/padding_right"
+                            android:paddingStart="@dimen/padding_left"
+                            android:text="@string/player_1_team_A_runs_text_view"
+                            android:textColor="@android:color/black"
+                            android:textSize="24sp"
+                            app:fontFamily="sans-serif" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/player_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginTop="@dimen/margin"
+                            android:text="@string/player_2_text_view"
+                            android:textColor="@android:color/black"
+                            android:textSize="24sp"
+                            app:fontFamily="sans-serif" />
+
+                        <TextView
+                            android:id="@+id/playerTwoRunsTeamA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginTop="@dimen/margin"
+                            android:background="@android:color/white"
+                            android:paddingEnd="@dimen/padding_right"
+                            android:paddingLeft="@dimen/padding_left"
+                            android:paddingRight="@dimen/padding_right"
+                            android:paddingStart="@dimen/padding_left"
+                            android:text="@string/player_1_team_A_runs_text_view"
+                            android:textColor="@android:color/black"
+                            android:textSize="24sp"
+                            app:fontFamily="sans-serif" />
+                    </LinearLayout>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingEnd="@dimen/no_margin"
+                        android:paddingLeft="@dimen/margin"
+                        android:paddingRight="@dimen/no_margin"
+                        android:paddingStart="@dimen/margin">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/player_teamB_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin"
+                                android:layout_marginStart="@dimen/margin"
+                                android:layout_marginTop="@dimen/margin"
+                                android:text="@string/player_1_text_view"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/team_A_text_size"
+                                app:fontFamily="sans-serif" />
+
+                            <TextView
+                                android:id="@+id/playerOneRunsTeamB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin"
+                                android:layout_marginStart="@dimen/margin"
+                                android:layout_marginTop="@dimen/margin"
+                                android:background="@android:color/white"
+                                android:paddingEnd="@dimen/padding_right"
+                                android:paddingLeft="@dimen/padding_left"
+                                android:paddingRight="@dimen/padding_right"
+                                android:paddingStart="@dimen/padding_left"
+                                android:text="@string/player_1_team_A_runs_text_view"
+                                android:textColor="@android:color/black"
+                                android:textSize="24sp"
+                                app:fontFamily="sans-serif" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/player_teamB_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin"
+                                android:layout_marginStart="@dimen/margin"
+                                android:layout_marginTop="@dimen/margin"
+                                android:text="@string/player_2_text_view"
+                                android:textColor="@android:color/black"
+                                android:textSize="24sp"
+                                app:fontFamily="sans-serif" />
+
+                            <TextView
+                                android:id="@+id/playerTwoRunsTeamB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin"
+                                android:layout_marginStart="@dimen/margin"
+                                android:layout_marginTop="@dimen/margin"
+                                android:background="@android:color/white"
+                                android:paddingEnd="@dimen/padding_right"
+                                android:paddingLeft="@dimen/padding_left"
+                                android:paddingRight="@dimen/padding_right"
+                                android:paddingStart="@dimen/padding_left"
+                                android:text="@string/player_1_team_A_runs_text_view"
+                                android:textColor="@android:color/black"
+                                android:textSize="24sp"
+                                app:fontFamily="sans-serif" />
+                        </LinearLayout>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin">
+
+            <Button
+                android:id="@+id/one_run_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/runs_button"
+                android:onClick="addOneRun"
+                android:text="@string/add_one_run_button_text"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/two_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/runs_button"
+                android:onClick="addTwoRuns"
+                android:text="@string/add_two_runs_button_text"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/three_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/runs_button"
+                android:onClick="addThreeRuns"
+                android:text="@string/add_three_runs_button_text"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/four_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/runs_button"
+                android:onClick="addFourRuns"
+                android:text="@string/add_four_runs_button_text"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/six_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/runs_button"
+                android:onClick="addSixRuns"
+                android:text="@string/add_six_runs_button_text"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/wicket_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/wicket_button"
+                android:onClick="addWicket"
+                android:text="@string/add_wicket_button"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/margin">
+
+            <Button
+                android:id="@+id/minus_one_run_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_runs_button"
+                android:onClick="minusOneRun"
+                android:text="@string/minus_one_run"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus_two_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_runs_button"
+                android:onClick="minusTwoRuns"
+                android:text="@string/minus_two_runs"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus_three_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_runs_button"
+                android:onClick="minusThreeRuns"
+                android:text="@string/minus_three_runs"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus_four_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_runs_button"
+                android:onClick="minusFourRuns"
+                android:text="@string/minus_four_runs"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus_six_runs_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_runs_button"
+                android:onClick="minusSixRuns"
+                android:text="@string/minus_six_runs"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus_wicket_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/minus_wicket_button"
+                android:onClick="minusWicket"
+                android:text="@string/minus_one_wicket"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/resetScore"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/margin"
+                android:background="@drawable/reset_button"
+                android:onClick="resetScores"
+                android:text="@string/reset_button_text"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fake_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>
