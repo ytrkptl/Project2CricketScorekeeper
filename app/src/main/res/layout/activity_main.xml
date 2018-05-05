@@ -10,135 +10,138 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <RadioGroup
             android:id="@+id/radio_group_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
-            android:padding="@dimen/margin"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/margin">
 
-                <TextView
-                    android:id="@+id/teamNameA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/no_margin"
-                    android:layout_marginLeft="@dimen/no_margin"
-                    android:layout_marginRight="@dimen/no_margin"
-                    android:layout_marginStart="@dimen/no_margin"
-                    android:layout_marginTop="@dimen/margin"
-                    android:paddingEnd="@dimen/margin"
-                    android:paddingLeft="@dimen/margin"
-                    android:paddingRight="@dimen/margin"
-                    android:paddingStart="@dimen/margin"
-                    android:text="@string/team_nameA"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/team_A_text_size"
-                    app:fontFamily="sans-serif-medium" />
+            <TextView
+                android:id="@+id/teamNameA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/no_margin"
+                android:layout_marginLeft="@dimen/no_margin"
+                android:layout_marginRight="@dimen/no_margin"
+                android:layout_marginStart="@dimen/no_margin"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingEnd="@dimen/margin"
+                android:paddingLeft="@dimen/margin"
+                android:paddingRight="@dimen/margin"
+                android:paddingStart="@dimen/margin"
+                android:text="@string/team_nameA"
+                android:textColor="@color/black"
+                android:textSize="@dimen/team_A_text_size"
+                app:fontFamily="sans-serif-medium" />
 
-                <TextView
-                    android:id="@+id/runsA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:paddingEnd="@dimen/no_margin"
-                    android:paddingLeft="@dimen/padding_left"
-                    android:paddingRight="@dimen/no_margin"
-                    android:paddingStart="@dimen/padding_left"
-                    android:text="@string/runs_A"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:id="@+id/runsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/no_margin"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingRight="@dimen/no_margin"
+                android:paddingStart="@dimen/padding_left"
+                android:text="@string/runs_A"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:text="@string/slash_sign"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:text="@string/slash_sign"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
-                <TextView
-                    android:id="@+id/wicketsA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:paddingEnd="@dimen/padding_right"
-                    android:paddingLeft="@dimen/no_margin"
-                    android:paddingRight="@dimen/padding_right"
-                    android:paddingStart="@dimen/no_margin"
-                    android:text="@string/team_A_wickets_text_view"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:id="@+id/wicketsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/padding_right"
+                android:paddingLeft="@dimen/no_margin"
+                android:paddingRight="@dimen/padding_right"
+                android:paddingStart="@dimen/no_margin"
+                android:text="@string/team_A_wickets_text_view"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
-                <TextView
-                    android:id="@+id/teamNameB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/no_margin"
-                    android:layout_marginLeft="@dimen/no_margin"
-                    android:layout_marginRight="@dimen/no_margin"
-                    android:layout_marginStart="@dimen/no_margin"
-                    android:layout_marginTop="@dimen/margin"
-                    android:paddingEnd="@dimen/margin"
-                    android:paddingLeft="@dimen/margin"
-                    android:paddingRight="@dimen/margin"
-                    android:paddingStart="@dimen/margin"
-                    android:text="@string/team_nameB"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/team_A_text_size"
-                    app:fontFamily="sans-serif-medium" />
+            <TextView
+                android:id="@+id/teamNameB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/no_margin"
+                android:layout_marginLeft="@dimen/no_margin"
+                android:layout_marginRight="@dimen/no_margin"
+                android:layout_marginStart="@dimen/no_margin"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingEnd="@dimen/margin"
+                android:paddingLeft="@dimen/margin"
+                android:paddingRight="@dimen/margin"
+                android:paddingStart="@dimen/margin"
+                android:text="@string/team_nameB"
+                android:textColor="@color/black"
+                android:textSize="@dimen/team_A_text_size"
+                app:fontFamily="sans-serif-medium" />
 
-                <TextView
-                    android:id="@+id/runsB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:paddingEnd="@dimen/no_margin"
-                    android:paddingLeft="@dimen/padding_left"
-                    android:paddingRight="@dimen/no_margin"
-                    android:paddingStart="@dimen/padding_left"
-                    android:text="@string/runs_B"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:id="@+id/runsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/no_margin"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingRight="@dimen/no_margin"
+                android:paddingStart="@dimen/padding_left"
+                android:text="@string/runs_B"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:text="@string/slash_sign"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:text="@string/slash_sign"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
-                <TextView
-                    android:id="@+id/wicketsB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin"
-                    android:background="@android:color/white"
-                    android:paddingEnd="@dimen/padding_right"
-                    android:paddingLeft="@dimen/no_margin"
-                    android:paddingRight="@dimen/padding_right"
-                    android:paddingStart="@dimen/no_margin"
-                    android:text="@string/team_B_wickets_text_view"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif" />
+            <TextView
+                android:id="@+id/wicketsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/padding_right"
+                android:paddingLeft="@dimen/no_margin"
+                android:paddingRight="@dimen/padding_right"
+                android:paddingStart="@dimen/no_margin"
+                android:text="@string/team_B_wickets_text_view"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif" />
 
         </RadioGroup>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/black" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -156,17 +159,17 @@
                 android:id="@+id/toggle_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textOn="@string/team_nameB"
+                android:onClick="onToggleClicked"
                 android:textOff="@string/team_nameA"
-                android:onClick="onToggleClicked"/>
+                android:textOn="@string/team_nameB" />
         </LinearLayout>
-
 
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/black" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,9 +180,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <RadioGroup
                     android:id="@+id/radio_group_2"
@@ -272,10 +275,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
-                android:orientation="vertical"
                 android:layout_gravity="center"
-                android:gravity="center">
+                android:layout_margin="@dimen/margin"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
