@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@drawable/background_image">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -164,7 +164,6 @@
                 android:textOn="@string/team_nameB" />
         </LinearLayout>
 
-
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -177,197 +176,172 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/radio_group_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/radio_group_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingEnd="@dimen/no_margin"
-                    android:paddingLeft="@dimen/margin"
-                    android:paddingRight="@dimen/no_margin"
-                    android:paddingStart="@dimen/margin">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/player_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/margin"
-                            android:layout_marginStart="@dimen/margin"
-                            android:layout_marginTop="@dimen/margin"
-                            android:text="@string/player_1_text_view"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/team_A_text_size"
-                            app:fontFamily="sans-serif" />
-
-                        <TextView
-                            android:id="@+id/playerOneRuns"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/margin"
-                            android:layout_marginStart="@dimen/margin"
-                            android:layout_marginTop="@dimen/margin"
-                            android:background="@android:color/white"
-                            android:paddingEnd="@dimen/padding_right"
-                            android:paddingLeft="@dimen/padding_left"
-                            android:paddingRight="@dimen/padding_right"
-                            android:paddingStart="@dimen/padding_left"
-                            android:text="@string/player_1_team_A_runs_text_view"
-                            android:textColor="@android:color/black"
-                            android:textSize="24sp"
-                            app:fontFamily="sans-serif" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/player_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/margin"
-                            android:layout_marginStart="@dimen/margin"
-                            android:layout_marginTop="@dimen/margin"
-                            android:text="@string/player_2_text_view"
-                            android:textColor="@android:color/black"
-                            android:textSize="24sp"
-                            app:fontFamily="sans-serif" />
-
-                        <TextView
-                            android:id="@+id/playerTwoRunsTeamA"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/margin"
-                            android:layout_marginStart="@dimen/margin"
-                            android:layout_marginTop="@dimen/margin"
-                            android:background="@android:color/white"
-                            android:paddingEnd="@dimen/padding_right"
-                            android:paddingLeft="@dimen/padding_left"
-                            android:paddingRight="@dimen/padding_right"
-                            android:paddingStart="@dimen/padding_left"
-                            android:text="@string/player_1_team_A_runs_text_view"
-                            android:textColor="@android:color/black"
-                            android:textSize="24sp"
-                            app:fontFamily="sans-serif" />
-                    </LinearLayout>
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="2dp"
-                android:layout_height="match_parent"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/margin"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/no_margin"
+                android:paddingLeft="@dimen/margin"
+                android:paddingRight="@dimen/no_margin"
+                android:paddingStart="@dimen/margin">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <RadioGroup
-                        android:id="@+id/radio_group_3"
+                    <RadioButton
+                        android:id="@+id/player_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingEnd="@dimen/no_margin"
-                        android:paddingLeft="@dimen/margin"
-                        android:paddingRight="@dimen/no_margin"
-                        android:paddingStart="@dimen/margin">
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:text="@string/player_1_text_view"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/team_A_text_size"
+                        app:fontFamily="sans-serif" />
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/player_teamB_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin"
-                                android:layout_marginStart="@dimen/margin"
-                                android:layout_marginTop="@dimen/margin"
-                                android:text="@string/player_1_text_view"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/team_A_text_size"
-                                app:fontFamily="sans-serif" />
-
-                            <TextView
-                                android:id="@+id/playerOneRunsTeamB"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin"
-                                android:layout_marginStart="@dimen/margin"
-                                android:layout_marginTop="@dimen/margin"
-                                android:background="@android:color/white"
-                                android:paddingEnd="@dimen/padding_right"
-                                android:paddingLeft="@dimen/padding_left"
-                                android:paddingRight="@dimen/padding_right"
-                                android:paddingStart="@dimen/padding_left"
-                                android:text="@string/player_1_team_A_runs_text_view"
-                                android:textColor="@android:color/black"
-                                android:textSize="24sp"
-                                app:fontFamily="sans-serif" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/player_teamB_2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin"
-                                android:layout_marginStart="@dimen/margin"
-                                android:layout_marginTop="@dimen/margin"
-                                android:text="@string/player_2_text_view"
-                                android:textColor="@android:color/black"
-                                android:textSize="24sp"
-                                app:fontFamily="sans-serif" />
-
-                            <TextView
-                                android:id="@+id/playerTwoRunsTeamB"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/margin"
-                                android:layout_marginStart="@dimen/margin"
-                                android:layout_marginTop="@dimen/margin"
-                                android:background="@android:color/white"
-                                android:paddingEnd="@dimen/padding_right"
-                                android:paddingLeft="@dimen/padding_left"
-                                android:paddingRight="@dimen/padding_right"
-                                android:paddingStart="@dimen/padding_left"
-                                android:text="@string/player_1_team_A_runs_text_view"
-                                android:textColor="@android:color/black"
-                                android:textSize="24sp"
-                                app:fontFamily="sans-serif" />
-                        </LinearLayout>
-                    </RadioGroup>
+                    <TextView
+                        android:id="@+id/playerOneRuns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:background="@android:color/white"
+                        android:paddingEnd="@dimen/padding_right"
+                        android:paddingLeft="@dimen/padding_left"
+                        android:paddingRight="@dimen/padding_right"
+                        android:paddingStart="@dimen/padding_left"
+                        android:text="@string/player_1_team_A_runs_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
                 </LinearLayout>
-            </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/player_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:text="@string/player_2_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:id="@+id/playerTwoRunsTeamA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:background="@android:color/white"
+                        android:paddingEnd="@dimen/padding_right"
+                        android:paddingLeft="@dimen/padding_left"
+                        android:paddingRight="@dimen/padding_right"
+                        android:paddingStart="@dimen/padding_left"
+                        android:text="@string/player_1_team_A_runs_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
+                </LinearLayout>
+            </RadioGroup>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/no_margin"
+                android:paddingLeft="@dimen/margin"
+                android:paddingRight="@dimen/no_margin"
+                android:paddingStart="@dimen/margin">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/player_teamB_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:text="@string/player_1_text_view"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/team_A_text_size"
+                        app:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:id="@+id/playerOneRunsTeamB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:background="@android:color/white"
+                        android:paddingEnd="@dimen/padding_right"
+                        android:paddingLeft="@dimen/padding_left"
+                        android:paddingRight="@dimen/padding_right"
+                        android:paddingStart="@dimen/padding_left"
+                        android:text="@string/player_1_team_A_runs_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/player_teamB_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:text="@string/player_2_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:id="@+id/playerTwoRunsTeamB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:layout_marginStart="@dimen/margin"
+                        android:layout_marginTop="@dimen/margin"
+                        android:background="@android:color/white"
+                        android:paddingEnd="@dimen/padding_right"
+                        android:paddingLeft="@dimen/padding_left"
+                        android:paddingRight="@dimen/padding_right"
+                        android:paddingStart="@dimen/padding_left"
+                        android:text="@string/player_1_team_A_runs_text_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        app:fontFamily="sans-serif" />
+                </LinearLayout>
+            </RadioGroup>
         </LinearLayout>
 
         <View
@@ -528,27 +502,16 @@
             android:layout_height="2dp"
             android:background="@color/black" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <Button
-                android:id="@+id/resetScore"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/button_size"
-                android:layout_margin="@dimen/margin"
-                android:background="@drawable/reset_button"
-                android:onClick="resetScores"
-                android:text="@string/reset_button_text"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
         <Button
-            android:id="@+id/fake_button"
+            android:id="@+id/resetScore"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:layout_height="@dimen/button_size"
+            android:layout_margin="@dimen/margin"
+            android:background="@drawable/reset_button"
+            android:onClick="resetScores"
+            android:text="@string/reset_button_text"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
 </ScrollView>
