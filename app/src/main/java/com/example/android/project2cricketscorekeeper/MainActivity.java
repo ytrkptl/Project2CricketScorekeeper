@@ -10,6 +10,16 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String COUNTER_A = "counterA";
+    private static final String COUNTER_B = "counterB";
+    private static final String COUNTER_C = "counterC";
+    private static final String COUNTER_D = "counterD";
+    private static final String COUNTER_E = "counterE";
+    private static final String COUNTER_F = "counterF";
+    private static final String COUNTER_G = "counterG";
+    private static final String COUNTER_H = "counterH";
+    private static final String COUNTER_I = "counterI";
+    private static final String COUNTER_J = "counterJ";
     ToggleButton toggleButton;
     int scoreTeamA = 0;
     int scoreTeamB = 0;
@@ -30,65 +40,151 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            scoreTeamA = savedInstanceState.getInt(COUNTER_A);
+            scoreTeamB = savedInstanceState.getInt(COUNTER_B);
+            scorePlayerOneTeamA = savedInstanceState.getInt(COUNTER_C);
+            scorePlayerTwoTeamA = savedInstanceState.getInt(COUNTER_D);
+            scorePlayerOneTeamB = savedInstanceState.getInt(COUNTER_E);
+            scorePlayerTwoTeamB = savedInstanceState.getInt(COUNTER_F);
+            wicketTeamA = savedInstanceState.getInt(COUNTER_G);
+            wicketTeamB = savedInstanceState.getInt(COUNTER_H);
+            on = savedInstanceState.getBoolean(COUNTER_I);
+            selectedPlayerId = savedInstanceState.getInt(COUNTER_J);
+        }
         setContentView(R.layout.activity_main);
-        firstThis();
+
+        TextView teamAScore = findViewById(R.id.runsA);
+        TextView teamBScore = findViewById(R.id.runsB);
+        TextView player1TeamAScore = findViewById(R.id.playerOneRuns);
+        TextView player2TeamAScore = findViewById(R.id.playerTwoRunsTeamA);
+        TextView player1TeamBScore = findViewById(R.id.playerOneRunsTeamB);
+        TextView player2TeamBScore = findViewById(R.id.playerTwoRunsTeamB);
+        TextView wicketsTeamA = findViewById(R.id.wicketsA);
+        TextView wicketsTeamB = findViewById(R.id.wicketsB);
+        teamAScore.setText(String.valueOf(scoreTeamA));
+        teamBScore.setText(String.valueOf(scoreTeamB));
+        player1TeamAScore.setText(String.valueOf(scorePlayerOneTeamA));
+        player2TeamAScore.setText(String.valueOf(scorePlayerTwoTeamA));
+        player1TeamBScore.setText(String.valueOf(scorePlayerOneTeamB));
+        player2TeamBScore.setText(String.valueOf(scorePlayerTwoTeamB));
+        wicketsTeamA.setText(String.valueOf(wicketTeamA));
+        wicketsTeamB.setText(String.valueOf(wicketTeamB));
+        if (!on) {
+            firstThis();
+        } else {thenThis(); }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // Save the values you need from your textview into "outState"-object
+        super.onSaveInstanceState(outState);
+        outState.putInt(COUNTER_A, scoreTeamA);
+        outState.putInt(COUNTER_B, scoreTeamB);
+        outState.putInt(COUNTER_C, scorePlayerOneTeamA);
+        outState.putInt(COUNTER_D, scorePlayerTwoTeamA);
+        outState.putInt(COUNTER_E, scorePlayerOneTeamB);
+        outState.putInt(COUNTER_F, scorePlayerTwoTeamB);
+        outState.putInt(COUNTER_G, wicketTeamA);
+        outState.putInt(COUNTER_H, wicketTeamB);
+        outState.putBoolean(COUNTER_I, on);
+        outState.putInt(COUNTER_J, selectedPlayerId);
     }
 
     public void firstThis() {
+        playerRadioOneTeamA = findViewById(R.id.player_1);
+        playerRadioTwoTeamA = findViewById(R.id.player_2);
         playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
         playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
         playerRadioOneTeamB.setChecked(false);
         playerRadioOneTeamB.setEnabled(false);
         playerRadioTwoTeamB.setChecked(false);
         playerRadioTwoTeamB.setEnabled(false);
-        playerRadioOneTeamA = findViewById(R.id.player_1);
-        playerRadioTwoTeamA = findViewById(R.id.player_2);
         playerRadioOneTeamA.setChecked(false);
         playerRadioOneTeamA.setEnabled(true);
         playerRadioTwoTeamA.setChecked(false);
         playerRadioTwoTeamA.setEnabled(true);
     }
+    public void thenThis() {
+        playerRadioOneTeamA = findViewById(R.id.player_1);
+        playerRadioTwoTeamA = findViewById(R.id.player_2);
+        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
+        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
+        playerRadioOneTeamA.setChecked(false);
+        playerRadioOneTeamA.setEnabled(false);
+        playerRadioTwoTeamA.setChecked(false);
+        playerRadioTwoTeamA.setEnabled(false);
+        playerRadioOneTeamB.setChecked(false);
+        playerRadioOneTeamB.setEnabled(true);
+        playerRadioTwoTeamB.setChecked(false);
+        playerRadioTwoTeamB.setEnabled(true);
+    }
 
     public void onToggleClicked(View view) {
         // Is the toggle on?
         toggleButton = findViewById(R.id.toggle_button);
-        on = toggleButton.isChecked();
-
-        if (on) {
-            // Enable vibrate
-            selectedPlayerId = 0;
-            selectTeam();
+        boolean tb;
+        tb = toggleButton.isChecked();
+        selectedPlayerId = 0;
+        int run = 0;
+        int wicket = 0;
+        if (tb) {
+            selectBattingTeamB(run, wicket);
+            thenThis();
         } else {
-            // Disable vibrate
-            selectedPlayerId = 0;
-            selectTeam();
+            selectBattingTeamA(run, wicket);
+            firstThis();
         }
     }
 
-    public void selectTeam() {
-        int run = 0;
-        int wicket = 0;
-        if (on) {
-            selectBattingTeamB(run, wicket);
-            playerRadioOneTeamA.setChecked(false);
-            playerRadioOneTeamA.setEnabled(false);
-            playerRadioTwoTeamA.setChecked(false);
-            playerRadioTwoTeamA.setEnabled(false);
-            playerRadioOneTeamB.setChecked(false);
-            playerRadioOneTeamB.setEnabled(true);
-            playerRadioTwoTeamB.setChecked(false);
-            playerRadioTwoTeamB.setEnabled(true);
-        } else {
-            selectBattingTeamA(run, wicket);
-            playerRadioOneTeamB.setChecked(false);
-            playerRadioOneTeamB.setEnabled(false);
-            playerRadioTwoTeamB.setChecked(false);
-            playerRadioTwoTeamB.setEnabled(false);
-            playerRadioOneTeamA.setChecked(false);
-            playerRadioOneTeamA.setEnabled(true);
-            playerRadioTwoTeamA.setChecked(false);
-            playerRadioTwoTeamA.setEnabled(true);
-        }
+    public void radioButtons() {
+        playerRadioOneTeamA = findViewById(R.id.player_1);
+        playerRadioTwoTeamA = findViewById(R.id.player_2);
+        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
+        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
+//        the following code idea for RadioButtons that have additional views in it came from
+//        Srujan Barai at the following Stack Overflow site:
+//        https://stackoverflow.com/questions/34575381/radiobuttons-inside-same-radiogroup-but-both-buttons-can-be-selected
+        playerRadioOneTeamA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerRadioTwoTeamA.setChecked(false);
+                playerRadioOneTeamB.setChecked(false);
+                playerRadioTwoTeamB.setChecked(false);
+                on = false;
+                selectedPlayerId = 1;
+            }
+        });
+        playerRadioTwoTeamA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerRadioOneTeamA.setChecked(false);
+                playerRadioOneTeamB.setChecked(false);
+                playerRadioTwoTeamB.setChecked(false);
+                on = false;
+                selectedPlayerId = 2;
+            }
+        });
+        playerRadioOneTeamB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerRadioOneTeamA.setChecked(false);
+                playerRadioTwoTeamA.setChecked(false);
+                playerRadioTwoTeamB.setChecked(false);
+                on = true;
+                selectedPlayerId = 3;
+            }
+        });
+        playerRadioTwoTeamB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerRadioOneTeamA.setChecked(false);
+                playerRadioTwoTeamA.setChecked(false);
+                playerRadioOneTeamB.setChecked(false);
+                on = true;
+                selectedPlayerId = 4;
+            }
+        });
     }
 
     /**
@@ -237,57 +333,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void selectBattingTeamA(int run, int wicket) {
-        playerRadioOneTeamA = findViewById(R.id.player_1);
-        playerRadioTwoTeamA = findViewById(R.id.player_2);
-        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
-        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
-        playerRadioOneTeamA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playerRadioTwoTeamA.setChecked(false);
-                playerRadioOneTeamB.setChecked(false);
-                playerRadioTwoTeamB.setChecked(false);
-                selectedPlayerId = 1;
-            }
-        });
-        playerRadioTwoTeamA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playerRadioOneTeamA.setChecked(false);
-                playerRadioOneTeamB.setChecked(false);
-                playerRadioTwoTeamB.setChecked(false);
-                selectedPlayerId = 2;
-            }
-        });
+//        playerRadioOneTeamA = findViewById(R.id.player_1);
+//        playerRadioTwoTeamA = findViewById(R.id.player_2);
+//        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
+//        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
+//        playerRadioOneTeamA.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                playerRadioTwoTeamA.setChecked(false);
+//                playerRadioOneTeamB.setChecked(false);
+//                playerRadioTwoTeamB.setChecked(false);
+//                selectedPlayerId = 1;
+//            }
+//        });
+//        playerRadioTwoTeamA.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                playerRadioOneTeamA.setChecked(false);
+//                playerRadioOneTeamB.setChecked(false);
+//                playerRadioTwoTeamB.setChecked(false);
+//                selectedPlayerId = 2;
+//            }
+//        });
+        radioButtons();
         checkRadioTeamA(selectedPlayerId, run, wicket);
     }
 
     public void selectBattingTeamB(int run, int wicket) {
-        playerRadioOneTeamA = findViewById(R.id.player_1);
-        playerRadioTwoTeamA = findViewById(R.id.player_2);
-        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
-        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
-//        the following code idea for RadioButtons that have additional views in it came from
-//        Srujan Barai at the following Stack Overflow site:
-//        https://stackoverflow.com/questions/34575381/radiobuttons-inside-same-radiogroup-but-both-buttons-can-be-selected
-        playerRadioOneTeamB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playerRadioOneTeamA.setChecked(false);
-                playerRadioTwoTeamA.setChecked(false);
-                playerRadioTwoTeamB.setChecked(false);
-                selectedPlayerId = 1;
-            }
-        });
-        playerRadioTwoTeamB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playerRadioOneTeamA.setChecked(false);
-                playerRadioTwoTeamA.setChecked(false);
-                playerRadioOneTeamB.setChecked(false);
-                selectedPlayerId = 2;
-            }
-        });
+//        playerRadioOneTeamA = findViewById(R.id.player_1);
+//        playerRadioTwoTeamA = findViewById(R.id.player_2);
+//        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
+//        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
+////        the following code idea for RadioButtons that have additional views in it came from
+////        Srujan Barai at the following Stack Overflow site:
+////        https://stackoverflow.com/questions/34575381/radiobuttons-inside-same-radiogroup-but-both-buttons-can-be-selected
+//        playerRadioOneTeamB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                playerRadioOneTeamA.setChecked(false);
+//                playerRadioTwoTeamA.setChecked(false);
+//                playerRadioTwoTeamB.setChecked(false);
+//                selectedPlayerId = 3;
+//            }
+//        });
+//        playerRadioTwoTeamB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                playerRadioOneTeamA.setChecked(false);
+//                playerRadioTwoTeamA.setChecked(false);
+//                playerRadioOneTeamB.setChecked(false);
+//                selectedPlayerId = 4;
+//            }
+//        });
+        radioButtons();
         checkRadioTeamB(selectedPlayerId, run, wicket);
     }
 
@@ -326,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
     private void checkRadioTeamB(int selectedPlayerId, int run, int wicket) {
         if (selectedPlayerId == 0) {
             Toast.makeText(this, getString(R.string.select_player_on_strike), Toast.LENGTH_SHORT).show();
-        } else if (selectedPlayerId == 1) {
+        } else if (selectedPlayerId == 3) {
             if (wicket == 0) {
                 displayForTeamB(run);
                 displayForPlayerOneTeamB(run);
@@ -335,7 +433,7 @@ public class MainActivity extends AppCompatActivity {
                 displayWicketsForTeamB(wicket);
                 playerRadioTwoTeamB.performClick();
             }
-        } else if (selectedPlayerId == 2) {
+        } else if (selectedPlayerId == 4) {
             if (wicket == 0) {
                 displayForTeamB(run);
                 displayForPlayerTwoTeamB(run);
@@ -433,6 +531,7 @@ public class MainActivity extends AppCompatActivity {
         scorePlayerTwoTeamB = 0;
         on = false;
         wicket = 0;
+        selectedPlayerId = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
         displayWicketsForTeamA(wicketTeamA);
@@ -441,8 +540,5 @@ public class MainActivity extends AppCompatActivity {
         displayForPlayerTwoTeamA(scorePlayerOneTeamA);
         displayForPlayerOneTeamB(scorePlayerOneTeamB);
         displayForPlayerTwoTeamB(scorePlayerOneTeamA);
-        firstThis();
-        selectedPlayerId = 0;
-        toggleButton.setChecked(false);
     }
 }
