@@ -520,6 +520,5 @@
             android:onClick="resetScores"
             android:text="@string/reset_button_text"
             android:textColor="@android:color/white" />
-
     </LinearLayout>
 </ScrollView>

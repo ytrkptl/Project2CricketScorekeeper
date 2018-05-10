@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onToggleClicked(View view) {
         // Is the toggle on?
+
         toggleButton = findViewById(R.id.toggle_button);
         boolean tb;
         tb = toggleButton.isChecked();
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 playerRadioTwoTeamA.setChecked(false);
                 playerRadioOneTeamB.setChecked(false);
                 playerRadioTwoTeamB.setChecked(false);
-                on = false;
+                on = true;
                 selectedPlayerId = 1;
             }
         });
@@ -333,58 +334,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void selectBattingTeamA(int run, int wicket) {
-//        playerRadioOneTeamA = findViewById(R.id.player_1);
-//        playerRadioTwoTeamA = findViewById(R.id.player_2);
-//        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
-//        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
-//        playerRadioOneTeamA.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playerRadioTwoTeamA.setChecked(false);
-//                playerRadioOneTeamB.setChecked(false);
-//                playerRadioTwoTeamB.setChecked(false);
-//                selectedPlayerId = 1;
-//            }
-//        });
-//        playerRadioTwoTeamA.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playerRadioOneTeamA.setChecked(false);
-//                playerRadioOneTeamB.setChecked(false);
-//                playerRadioTwoTeamB.setChecked(false);
-//                selectedPlayerId = 2;
-//            }
-//        });
         radioButtons();
         checkRadioTeamA(selectedPlayerId, run, wicket);
     }
 
     public void selectBattingTeamB(int run, int wicket) {
-//        playerRadioOneTeamA = findViewById(R.id.player_1);
-//        playerRadioTwoTeamA = findViewById(R.id.player_2);
-//        playerRadioOneTeamB = findViewById(R.id.player_teamB_1);
-//        playerRadioTwoTeamB = findViewById(R.id.player_teamB_2);
-////        the following code idea for RadioButtons that have additional views in it came from
-////        Srujan Barai at the following Stack Overflow site:
-////        https://stackoverflow.com/questions/34575381/radiobuttons-inside-same-radiogroup-but-both-buttons-can-be-selected
-//        playerRadioOneTeamB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playerRadioOneTeamA.setChecked(false);
-//                playerRadioTwoTeamA.setChecked(false);
-//                playerRadioTwoTeamB.setChecked(false);
-//                selectedPlayerId = 3;
-//            }
-//        });
-//        playerRadioTwoTeamB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playerRadioOneTeamA.setChecked(false);
-//                playerRadioTwoTeamA.setChecked(false);
-//                playerRadioOneTeamB.setChecked(false);
-//                selectedPlayerId = 4;
-//            }
-//        });
         radioButtons();
         checkRadioTeamB(selectedPlayerId, run, wicket);
     }
@@ -540,5 +494,9 @@ public class MainActivity extends AppCompatActivity {
         displayForPlayerTwoTeamA(scorePlayerOneTeamA);
         displayForPlayerOneTeamB(scorePlayerOneTeamB);
         displayForPlayerTwoTeamB(scorePlayerOneTeamA);
+        playerRadioOneTeamA.setChecked(false);
+        playerRadioTwoTeamA.setChecked(false);
+        playerRadioOneTeamB.setChecked(false);
+        playerRadioTwoTeamB.setChecked(false);
     }
 }
